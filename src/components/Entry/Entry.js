@@ -4,11 +4,11 @@ import Rating from '../Rating/Rating';
 import Picture from '../Picture/Picture';
 import Notes from '../Notes/Notes';
 
-//import Style from './Entry.js';
+import './Entry.css';
 
 const Entry = (props) => {
     return (
-        <div>
+        <div className="Entry">
             <Rating/>
             <Picture id={props.pictureKey}/>
             <Notes/>  

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 import CardList from './containers/CardList/CardList';
@@ -13,8 +12,7 @@ class App extends Component {
           <img src="https://cdn.tempostorm.com/articles/rank-1.square.jpg" className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to HearthRater!</h1>
         </header>
-        <p className="App-intro"> 
-         <CardList />        
+        <p className="App-intro">       
         </p>
         <CardList />
       </div>
