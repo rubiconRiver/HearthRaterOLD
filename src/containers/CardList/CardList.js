@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import Entry from '../../components/Entry/Entry';
 
-const CARDNUMBER = 12
+const CARDNUMBER = 3
 
 class CardList extends Component {
     state = {

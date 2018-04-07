@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 
 import CardList from './containers/CardList/CardList';
+import SaveButton from './components/SaveButton/SaveButton';
 
 
 class App extends Component {
@@ -15,6 +16,7 @@ class App extends Component {
         <p className="App-intro">       
         </p>
         <CardList />
+        <SaveButton/>
       </div>
     );
   }
