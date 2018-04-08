@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from '../../Axios'
 
 import Entry from '../../components/Entry/Entry';
+import './CardList.css'
 
 const CARDNUMBER = 3;
 
@@ -27,7 +28,7 @@ class CardList extends Component {
 
         for (var i = 0; i < this.state.cardNumber; i++) {
             entryList.push(
-                <div>
+                <div className="CardList">
                     <Entry key={i}/>
                 </div>
             )

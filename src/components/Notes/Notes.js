@@ -1,8 +1,10 @@
 import React from 'react';
 
+import './Notes.css'
+
 const Notes = () => {
     return (
-        <div>
+        <div className="Notes">
             <textarea cols="25" rows="5" defaultValue="Default Card Notes"></textarea>
         </div>
     )
