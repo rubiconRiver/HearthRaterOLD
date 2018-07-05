@@ -1,8 +1,10 @@
 .Entry {
-    margin: auto;
-    width: 50%;
-    border: 3px solid brown;
-    padding: 10px;
+    display: block;
+    margin: 0;
+    width: 10%;
+    border: 20px solid rgb(1, 29, 90);
+    padding: 1px;
+    background-color: rgb(249, 252, 251);
 }
 
 /* margin: auto;

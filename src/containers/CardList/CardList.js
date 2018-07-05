@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from '../../Axios'
 
 import Entry from '../../components/Entry/Entry';
+import './CardList.css';
 
 const CARDNUMBER = 3;
 
@@ -16,7 +17,15 @@ class CardList extends Component {
     
     axios.get("https://hearthrater.firebaseio.com/CardList.json").then(response => {
         const cards = response.data;
-        console.log(cards);
+        console.log(response.data);
+        // const updatedCards = cards.map(card => {
+        //     return {
+        //         ...card,
+        //         author: "Garett"
+        //     }
+        // });
+        // console.log("[cards]" + cards);
+        // console.log("[updatedCards}" + updatedCards);
     })
 
 }
