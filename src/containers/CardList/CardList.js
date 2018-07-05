@@ -16,7 +16,7 @@ class CardList extends Component {
         
     
     axios.get("https://hearthrater.firebaseio.com/CardList.json").then(response => {
-        const cards = response.data;
+      //  const cards = response.data;
         console.log(response.data);
         // const updatedCards = cards.map(card => {
         //     return {
