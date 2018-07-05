@@ -2,11 +2,7 @@ import React, { Component } from 'react';
 import axios from '../../Axios'
 
 import Entry from '../../components/Entry/Entry';
-<<<<<<< HEAD
 import './CardList.css';
-=======
-import './CardList.css'
->>>>>>> 0d63f7ae5490d8257f069c1d36519497a943a95f
 
 const CARDNUMBER = 3;
 

@@ -1,5 +1,4 @@
 .Entry {
-<<<<<<< HEAD
     display: block;
     margin: 0;
     width: 10%;
@@ -12,11 +11,3 @@
 width: 50%;
 border: 3px solid green;
 padding: 10px; */
-=======
-    margin: auto;
-    width: 25%;
-    border: 3px solid brown;
-    padding: 10px;
-    display: inline-flex;
-}
->>>>>>> 0d63f7ae5490d8257f069c1d36519497a943a95f
