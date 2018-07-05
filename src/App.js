@@ -10,7 +10,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src="http://digitalspyuk.cdnds.net/18/14/980x490/landscape-1522924460-avengers-infinity-war-poster.jpg" className="App-logo" alt="logo" />
+          <img src="https://pbs.twimg.com/profile_images/779964501881946112/S3a8rbfc_400x400.jpg" className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to HearthRater!</h1>
         </header>
         <p className="App-intro">       
