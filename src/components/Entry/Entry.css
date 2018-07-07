@@ -1,5 +1,5 @@
 .Entry {
-    display: block;
+    display: inline-block;
     margin: 0;
     width: 10%;
     border: 20px solid rgb(1, 29, 90);
