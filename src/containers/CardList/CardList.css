@@ -1,8 +1,12 @@
 .Entry{
+<<<<<<< HEAD
     display: block;
     float: left;
+=======
+>>>>>>> 3f3bc60808990cf8543f48dd98a39fecb093f5bd
 }
 
 .div{
-    display: block;
+    display: inline-block;
+    float: left;
 }
