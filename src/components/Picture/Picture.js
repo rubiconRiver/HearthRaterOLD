@@ -19,8 +19,8 @@ class Picture extends React.Component{
     render () {
             return (
                 <div className="Picture" onMouseOver={() => this.mouseOver()} onMouseOut={() => this.mouseOut()}>
-                    <img className="Img" src="https://assets.webn.mobi/hearthstone/0934a8fed42e35594392610cb9f22987983cd39ea9630ff85b091a7f91ec2a7a.png" alt="HS Card" />
-                    {this.state.hover ? (<img className="Preview" src="https://assets.webn.mobi/hearthstone/0934a8fed42e35594392610cb9f22987983cd39ea9630ff85b091a7f91ec2a7a.png" alt="HS Card"/>) : null}  
+                    <img className="Img" src="https://assets.webn.mobi/hearthstone/3953c5ca2f58247cec8036b6d531f25a69b533ff7b5c1a7f7348452c99570d3d.png" alt="HS Card" />
+                    {this.state.hover ? (<img className="Preview" src="https://assets.webn.mobi/hearthstone/3953c5ca2f58247cec8036b6d531f25a69b533ff7b5c1a7f7348452c99570d3d.png" alt="HS Card"/>) : null}  
                 </div>
             )
     }
