@@ -5,8 +5,8 @@ import "./Rating.css";
 const Rating = () => {
   return (
     <div>
-      <form action="/action_page.php">
-        <select name="cars">
+      <form>
+        <select name="cards">
           <option value="1">1</option>
           <option value="1">1.5</option>
           <option value="1">2</option>
