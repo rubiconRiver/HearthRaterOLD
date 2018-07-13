@@ -4,11 +4,9 @@ import axios from "../../Axios";
 import Entry from "../../components/Entry/Entry";
 import "./CardList.css";
 
-const CARDNUMBER = 3;
-
 class CardList extends Component {
-    //This is kinda ugly right now but I'll get it fixed.  Should I initialize an empty state?
-    //or should I have a separate file with state initialize state from that file?
+  //This is kinda ugly right now but I'll get it fixed.  Should I initialize an empty state?
+  //or should I have a separate file with state initialize state from that file?
   state = {
     cards: [
       {
@@ -62,10 +60,10 @@ class CardList extends Component {
   }
 
   render() {
-    const entryList = this.state.cards.map(cardList => {
+    const entryList = this.state.cards.map(card => {
       return (
         <div className="CardList">
-          <Entry key={cardList.name} props={cardList} />
+          <Entry key={card.name} props={card} />
         </div>
       );
     });
