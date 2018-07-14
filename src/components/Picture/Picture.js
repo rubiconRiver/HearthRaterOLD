@@ -8,11 +8,9 @@ class Picture extends React.Component {
 
   mouseOver = () => {
     this.setState({ hover: true });
-    console.log(this.state);
   };
   mouseOut() {
     this.setState({ hover: false });
-    console.log(this.state);
   }
   render() {
     console.log("imagesource", this.props.id);
