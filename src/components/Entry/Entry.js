@@ -6,15 +6,15 @@ import Notes from "../Notes/Notes";
 
 import "./Entry.css";
 
-const Entry = (card) => {
-  console.log("entry props", card.props.imgSource);
+const Entry = (props) => {
+  console.log("entry props", props.imgSource);
   return (
     <div className="Entry">
     <div>
-        <h5>{card.props.name}</h5>
+        <h5>{props.name}</h5>
         </div>
       <Rating />
-      <Picture id={card.props.imgSource} />
+      <Picture id={props.imgSource} />
       <Notes />
     </div>
   );
