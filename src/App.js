@@ -16,7 +16,9 @@ class App extends Component {
         <p className="App-intro">       
         </p>
         <CardList />
+        <footer className="App-footer">
         <SaveButton/>
+      </footer>
       </div>
     );
   }

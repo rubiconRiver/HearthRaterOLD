@@ -24,7 +24,7 @@ function fetchData(){
     <div>
     {fetchJSON ? fetchJSON.map(({name, imageURL}) => (
         <div className="CardList">
-          <Entry key={name} imgSource={imageURL} />
+          <Entry name={name} imgSource={imageURL} />
         </div> )) 
         : null }
         <button onClick={fetchData}>Fetch</button>
