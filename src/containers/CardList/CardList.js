@@ -27,7 +27,6 @@ function fetchData(){
           <Entry name={name} imgSource={imageURL} />
         </div> )) 
         : null }
-        <button onClick={fetchData}>Fetch</button>
     </div>
       );
   }

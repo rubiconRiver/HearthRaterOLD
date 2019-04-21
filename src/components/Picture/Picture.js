@@ -6,10 +6,10 @@ class Picture extends React.Component {
     hover: false
   };
 
-  mouseOver = () => {
+  mouseOver() {
     this.setState({ hover: true });
   };
-  mouseOut() {
+  mouseOut () {
     this.setState({ hover: false });
   }
   render() {
