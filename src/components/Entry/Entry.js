@@ -7,7 +7,6 @@ import Notes from "../Notes/Notes";
 import "./Entry.css";
 
 const Entry = (props) => {
-  console.log("entry props", props.imgSource);
   return (
     <div className="Entry">
     <div>

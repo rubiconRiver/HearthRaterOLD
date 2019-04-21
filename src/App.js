@@ -12,13 +12,11 @@ class App extends Component {
         <header className="App-header">
           <img src="https://pbs.twimg.com/profile_images/779964501881946112/S3a8rbfc_400x400.jpg" className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to HearthRater!</h1>
+          <SaveButton/>
         </header>
-        <p className="App-intro">       
-        </p>
+        <div className="CardList">
         <CardList />
-        <footer className="App-footer">
-        <SaveButton/>
-      </footer>
+        </div>
       </div>
     );
   }

@@ -15,16 +15,17 @@ function fetchData(){
     method: 'GET'
   })
   .then(response => response.json())
-  .then(json => setFetchJSON(json))
+  .then(json => {setFetchJSON(json)
+    console.log(JSON.stringify(json));
+  })
 
-    console.log(fetchJSON)
 }
 
   return(
     <div>
-    {fetchJSON ? fetchJSON.map(({name, imageURL}) => (
+    {fetchJSON ? fetchJSON.map(({id, name, imageURL}) => (
         <div className="CardList">
-          <Entry name={name} imgSource={imageURL} />
+          <Entry key={id} name={name} imgSource={imageURL} />
         </div> )) 
         : null }
     </div>

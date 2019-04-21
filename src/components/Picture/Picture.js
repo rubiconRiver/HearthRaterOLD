@@ -13,7 +13,6 @@ class Picture extends React.Component {
     this.setState({ hover: false });
   }
   render() {
-    console.log("imagesource", this.props.id);
     return (
       <div
         className="Picture"
