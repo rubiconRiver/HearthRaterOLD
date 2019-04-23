@@ -11,23 +11,23 @@ export default function CardList(props) {
   }, [])
 
 function fetchData(){
-  fetch("http://localhost:9000/cardrating", {
+  fetch("http://localhost:9000/cards", {
     method: 'GET'
   })
   .then(response => response.json())
   .then(json => {setFetchJSON(json)
-    console.log(JSON.stringify(json));
   })
 
 }
 
   return(
     <div>
-    {fetchJSON ? fetchJSON.map(({id, name, imageURL}) => (
+    {fetchJSON ? fetchJSON.map(({id, name, imageURL, cardRatings }) => (
         <div key={id} className="CardList">
-          <Entry  name={name} imgSource={imageURL} />
-        </div> )) 
-        : null }
+          <Entry cardId={id} name={name} imgSource={imageURL} notes={cardRatings[0] ? cardRatings[0].notes : null}/>
+        </div> 
+        )) 
+        : null }  
     </div>
       );
   }

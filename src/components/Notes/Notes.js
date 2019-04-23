@@ -1,5 +1,4 @@
 import React,{ useState }from 'react';
-import SaveButton from '../SaveButton/SaveButton'
 
 import './Notes.css'
 
@@ -11,7 +10,7 @@ export default function Notes(props) {
     }
 
     const onSubmit = (event) => {
-        const data = new FormData(event.target);
+
 
         fetch("http://localhost:9000/cardrating", {
             method: 'POST',
@@ -19,7 +18,9 @@ export default function Notes(props) {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                notes: notes
+                notes: notes,
+                nid: props.cardId,
+                rating: "123"
             })
         });
     }
@@ -27,10 +28,11 @@ export default function Notes(props) {
     return (
         <div>
             <form onSubmit={onSubmit}>
-            <textarea id="notes" onChange={onChange} value={notes} cols="35" rows="5" placeholder="Notes" />
+            <textarea id="notes" onChange={onChange} value={notes} cols="35" rows="5" placeholder={props.notes} />
             <button>save!</button>
             </form>
         </div>
+        
     );
     
 }

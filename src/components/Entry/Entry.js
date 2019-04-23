@@ -14,8 +14,9 @@ const Entry = (props) => {
         </div>
       <Rating />
       <Picture id={props.imgSource} />
-      <Notes />
+      <Notes cardId={props.cardId} notes={props.notes}/>
     </div>
+    
   );
 };
 
