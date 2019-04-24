@@ -1,6 +1,5 @@
 import React from "react";
 
-import Rating from "../Rating/Rating";
 import Picture from "../Picture/Picture";
 import Notes from "../Notes/Notes";
 
@@ -12,9 +11,8 @@ const Entry = (props) => {
     <div>
         <h5>{props.name}</h5>
         </div>
-      <Rating />
       <Picture id={props.imgSource} />
-      <Notes cardId={props.cardId} notes={props.notes}/>
+      <Notes cardId={props.cardId} notes={props.notes} rating={props.rating}/>
     </div>
     
   );

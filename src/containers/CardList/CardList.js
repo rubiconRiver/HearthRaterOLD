@@ -22,9 +22,14 @@ function fetchData(){
 
   return(
     <div>
-    {fetchJSON ? fetchJSON.map(({id, name, imageURL, cardRatings }) => (
+    {fetchJSON ? fetchJSON.map(({id, name, imageURL, cardRatings, rating  }) => (
         <div key={id} className="CardList">
-          <Entry cardId={id} name={name} imgSource={imageURL} notes={cardRatings[0] ? cardRatings[0].notes : null}/>
+          <Entry 
+            cardId={id} 
+            name={name} 
+            imgSource={imageURL}
+            notes={cardRatings[0] ? cardRatings[0].notes : null}
+            rating={cardRatings[0] ? cardRatings[0].rating : null}/>
         </div> 
         )) 
         : null }  
