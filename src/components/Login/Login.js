@@ -18,18 +18,14 @@ export default function Login() {
     })
       .then(response => response.json())
       .then(json => setUserJson(json));
-
-    console.log(userJson);
   }
 
   const changeEmail = event => {
     setEmail(event.target.value);
-    console.log("email:" + email);
   };
 
   const changePassword = event => {
     setPassword(event.target.value);
-    console.log("password:" + password);
   };
 
   return (

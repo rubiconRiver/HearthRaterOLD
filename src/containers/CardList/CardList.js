@@ -61,7 +61,6 @@ export default function CardList(props) {
         {fetchJSON ? (
           fetchJSON
             .filter(json => {
-              console.log("card_class: " + json.card_class);
               if (classFilter === "All") {
                 return true;
               } else {

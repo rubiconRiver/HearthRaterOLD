@@ -13,6 +13,7 @@ const Entry = props => {
       </div>
       <Picture id={props.imgSource} />
       <Notes
+        saved={props.saved}
         cardId={props.cardId}
         notes={props.notes ? props.notes : null}
         rating={props.rating}
