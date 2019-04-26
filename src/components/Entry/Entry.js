@@ -5,16 +5,19 @@ import Notes from "../Notes/Notes";
 
 import "./Entry.css";
 
-const Entry = (props) => {
+const Entry = props => {
   return (
     <div className="Entry">
-    <div>
+      <div>
         <h5>{props.name}</h5>
-        </div>
+      </div>
       <Picture id={props.imgSource} />
-      <Notes cardId={props.cardId} notes={props.notes} rating={props.rating}/>
+      <Notes
+        cardId={props.cardId}
+        notes={props.notes ? props.notes : null}
+        rating={props.rating}
+      />
     </div>
-    
   );
 };
 

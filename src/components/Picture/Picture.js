@@ -8,15 +8,13 @@ class Picture extends React.Component {
 
   mouseOver() {
     this.setState({ hover: true });
-  };
-  mouseOut () {
+  }
+  mouseOut() {
     this.setState({ hover: false });
   }
   render() {
     return (
-      <div
-        className="Picture"
-      >
+      <div className="Picture">
         <img className="Img" src={this.props.id} alt="HS Card" />
         {this.state.hover ? (
           <img className="Preview" src={this.props.id} alt="HS Card" />
