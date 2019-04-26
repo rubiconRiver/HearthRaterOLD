@@ -9,6 +9,7 @@ export default function CardList(props) {
   const [fetchJSON, setFetchJSON] = useState(undefined);
   const [classFilter, setClassFilter] = useState("All");
   const [typeFilter, setTypeFilter] = useState("All");
+  const [rarityFilter, setRarityFilter] = useState("All");
   const [sortBy, setSortBy] = useState("name");
   // eslint-disable-next-line
   const [saved, setSaved] = useState(false);
@@ -28,8 +29,8 @@ export default function CardList(props) {
   }
 
   const test = output => {
-    console.log(output)
-  }
+    console.log(output);
+  };
 
   const classChange = event => {
     setClassFilter(event.target.value);
@@ -40,6 +41,10 @@ export default function CardList(props) {
 
   const typeChange = event => {
     setTypeFilter(event.target.value);
+  };
+
+  const rarityChange = event => {
+    setRarityFilter(event.target.value);
   };
 
   const sortChange = event => {
@@ -68,6 +73,14 @@ export default function CardList(props) {
         <option value="Weapon">Weapon</option>
       </select>
 
+      <select name="rarity" onChange={rarityChange} value={rarityFilter}>
+        <option value="All">All Card Rarities</option>
+        <option value="Common">Common</option>
+        <option value="Rare">Rare</option>
+        <option value="Epic">Epic</option>
+        <option value="Legendary">Legendary</option>
+      </select>
+
       <select name="type" onChange={sortChange} value={sortBy}>
         <option value="name">Name</option>
         <option value="mana">Mana</option>
@@ -93,23 +106,22 @@ export default function CardList(props) {
             })
             .sort((a, b) => {
               if (sortBy === "name") {
-                if( a.name < b.name){
+                if (a.name < b.name) {
                   return -1;
                 }
               }
               if (sortBy === "class") {
-                if (a.class > b.class){
-                  return -1
+                if (a.class > b.class) {
+                  return -1;
                 }
               }
-              else{
-                return a.name > b.name;
-              }
+              return a.name > b.name;
             })
+
             .map(({ id, name, imageURL, cardRatings, card_type }) => (
               <div key={id}>
                 <Entry
-                test={test}
+                  test={test}
                   saved={setSaved}
                   cardId={id}
                   name={name}
