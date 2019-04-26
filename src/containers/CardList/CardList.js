@@ -58,36 +58,38 @@ export default function CardList(props) {
       </select>
 
       <div className="cardList">
-        {fetchJSON
-          ? fetchJSON
-              .filter(json => {
-                console.log("card_class: " + json.card_class);
-                if (classFilter === "All") {
-                  return true;
-                } else {
-                  return json.card_class === classFilter;
-                }
-              })
-              .filter(json => {
-                if (typeFilter === "All") {
-                  return true;
-                } else {
-                  return json.card_type === typeFilter;
-                }
-              })
-              .map(({ id, name, imageURL, cardRatings, card_type }) => (
-                <div key={id}>
-                  <Entry
-                    saved={setSaved}
-                    cardId={id}
-                    name={name}
-                    imgSource={imageURL}
-                    notes={cardRatings[0] ? cardRatings[0].notes : null}
-                    rating={cardRatings[0] ? cardRatings[0].rating : null}
-                  />
-                </div>
-              ))
-          : <h1>Loading...</h1>}
+        {fetchJSON ? (
+          fetchJSON
+            .filter(json => {
+              console.log("card_class: " + json.card_class);
+              if (classFilter === "All") {
+                return true;
+              } else {
+                return json.card_class === classFilter;
+              }
+            })
+            .filter(json => {
+              if (typeFilter === "All") {
+                return true;
+              } else {
+                return json.card_type === typeFilter;
+              }
+            })
+            .map(({ id, name, imageURL, cardRatings, card_type }) => (
+              <div key={id}>
+                <Entry
+                  saved={setSaved}
+                  cardId={id}
+                  name={name}
+                  imgSource={imageURL}
+                  notes={cardRatings[0] ? cardRatings[0].notes : null}
+                  rating={cardRatings[0] ? cardRatings[0].rating : null}
+                />
+              </div>
+            ))
+        ) : (
+          <h1>Loading...</h1>
+        )}
       </div>
     </div>
   );
