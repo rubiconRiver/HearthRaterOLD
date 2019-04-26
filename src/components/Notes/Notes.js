@@ -4,7 +4,7 @@ import './Notes.css'
 
 export default function Notes(props) {
     const [notes, setNotes] = useState("");
-    const [rating, setRating] = useState(props.rating)
+    const [rating, setRating] = useState(props.rating ? props.rating : 0)
 
     const onChange = (event) =>  {
         setNotes(event.target.value);
@@ -28,6 +28,8 @@ export default function Notes(props) {
                 rating: rating
             })
         });
+
+
     }
 
 
@@ -35,7 +37,8 @@ export default function Notes(props) {
     return (
         <div>
             <form onSubmit={onSubmit}>
-            <select name="rating" onChange = {valueChange} value={props.rating}> 
+            <select name="rating" onChange = {valueChange} value={rating}> 
+        <option value="0">0</option>
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
