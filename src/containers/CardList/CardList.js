@@ -87,7 +87,7 @@ export default function CardList(props) {
                   />
                 </div>
               ))
-          : null}
+          : <h1>Loading...</h1>}
       </div>
     </div>
   );
