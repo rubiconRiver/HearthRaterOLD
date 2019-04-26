@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import "./Notes.css";
 
 export default function Notes(props) {
-  const [notes, setNotes] = useState(props.notes);
+  const [notes, setNotes] = useState(props.notes ? props.notes : undefined);
   const [rating, setRating] = useState(props.rating ? props.rating : 0);
 
   const onChange = event => {
