@@ -3,10 +3,14 @@ import React, { useState, useEffect } from "react";
 import Entry from "../../components/Entry/Entry";
 import "./CardList.css";
 
+//this component is way too bloated and needs to be separated
+
 export default function CardList(props) {
   const [fetchJSON, setFetchJSON] = useState(undefined);
   const [classFilter, setClassFilter] = useState("All");
   const [typeFilter, setTypeFilter] = useState("All");
+  const [sortBy, setSortBy] = useState("name");
+  // eslint-disable-next-line
   const [saved, setSaved] = useState(false);
 
   useEffect(() => {
@@ -23,6 +27,10 @@ export default function CardList(props) {
       });
   }
 
+  const test = output => {
+    console.log(output)
+  }
+
   const classChange = event => {
     setClassFilter(event.target.value);
     if (event.target.value === "Neutral") {
@@ -34,6 +42,9 @@ export default function CardList(props) {
     setTypeFilter(event.target.value);
   };
 
+  const sortChange = event => {
+    setSortBy(event.target.value);
+  };
   return (
     <div>
       <select name="class" onChange={classChange} value={classFilter}>
@@ -57,6 +68,12 @@ export default function CardList(props) {
         <option value="Weapon">Weapon</option>
       </select>
 
+      <select name="type" onChange={sortChange} value={sortBy}>
+        <option value="name">Name</option>
+        <option value="mana">Mana</option>
+        <option value="class">Class</option>
+      </select>
+
       <div className="cardList">
         {fetchJSON ? (
           fetchJSON
@@ -74,9 +91,25 @@ export default function CardList(props) {
                 return json.card_type === typeFilter;
               }
             })
+            .sort((a, b) => {
+              if (sortBy === "name") {
+                if( a.name < b.name){
+                  return -1;
+                }
+              }
+              if (sortBy === "class") {
+                if (a.class > b.class){
+                  return -1
+                }
+              }
+              else{
+                return a.name > b.name;
+              }
+            })
             .map(({ id, name, imageURL, cardRatings, card_type }) => (
               <div key={id}>
                 <Entry
+                test={test}
                   saved={setSaved}
                   cardId={id}
                   name={name}

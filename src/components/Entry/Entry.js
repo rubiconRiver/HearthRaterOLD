@@ -6,6 +6,9 @@ import Notes from "../Notes/Notes";
 import "./Entry.css";
 
 const Entry = props => {
+
+  props.test("hello from " + props.name);
+
   return (
     <div className="Entry">
       <div>
