@@ -3,7 +3,7 @@ import React,{ useState }from 'react';
 import './Notes.css'
 
 export default function Notes(props) {
-    const [notes, setNotes] = useState("");
+    const [notes, setNotes] = useState(props.notes);
     const [rating, setRating] = useState(props.rating ? props.rating : 0)
 
     const onChange = (event) =>  {
@@ -37,6 +37,7 @@ export default function Notes(props) {
     return (
         <div>
             <form onSubmit={onSubmit}>
+            <div>
             <select name="rating" onChange = {valueChange} value={rating}> 
         <option value="0">0</option>
           <option value="1">1</option>
@@ -45,8 +46,11 @@ export default function Notes(props) {
           <option value="4">4</option>
           <option value="5">5</option>
         </select>
-            <textarea id="notes" onChange={onChange} value={notes} cols="20" rows="5" placeholder={props.notes ? props.notes : "notes"} />
+        </div>
+            <textarea id="notes" onChange={onChange} value={notes} cols="20" rows="5" placeholder={notes ? props.notes : "notes"} />
+            <div>
             <button>save!</button>
+            </div>
             </form>
         </div>
         
