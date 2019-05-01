@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 
 import "./Notes.css";
+import { watchFile } from "fs";
 
 export default function Notes(props) {
   const [notes, setNotes] = useState(props.notes ? props.notes : undefined);
   const [rating, setRating] = useState(props.rating ? props.rating : 0);
+  const [saved, setSaved] = useState(false);
 
   const onChange = event => {
     setNotes(event.target.value);
@@ -28,7 +30,13 @@ export default function Notes(props) {
         user: localStorage.getItem('authentication')
       })
     });
+    saveButton();
   };
+
+  function saveButton(){
+    setSaved(true);
+    
+  }
 
   return (
     <div>
@@ -52,7 +60,7 @@ export default function Notes(props) {
           placeholder={notes ? props.notes : "notes"}
         />
         <div>
-          <button>save!</button>
+          <button>save</button>
         </div>
       </form>
     </div>

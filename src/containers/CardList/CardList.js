@@ -26,6 +26,8 @@ export default function CardList(props) {
       .then(json => {
         setFetchJSON(json);
       });
+
+      console.log(localStorage.getItem('authentication'))
   }
 
   const test = output => {
@@ -54,7 +56,6 @@ export default function CardList(props) {
       
  
     <div>
-      {localStorage.getItem('Authentication')}
       <select name="class" onChange={classChange} value={classFilter}>
         <option value="All">All Classes</option>
         <option value="Neutral">Neutral</option>
@@ -105,6 +106,13 @@ export default function CardList(props) {
                 return true;
               } else {
                 return json.card_type === typeFilter;
+              }
+            })
+            .filter(json => {
+              if (rarityFilter === "All") {
+                return true;
+              } else {
+                return json.rarity === rarityFilter;
               }
             })
             .sort((a, b) => {
