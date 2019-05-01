@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 import Login from "./components/Login/Login";
 
 import CardList from "./containers/CardList/CardList";
@@ -20,8 +20,10 @@ class App extends Component {
           </header>
           <div className="CardList">
             <Switch>
+            <Route exact path="/cardlist" component={CardList} />
               <Route exact path="/login" component={Login} />
-              <Route exact path="/cardlist" component={CardList} />
+              
+              <Redirect exact from="/" to="/login"/>
             </Switch>
           </div>
         </div>

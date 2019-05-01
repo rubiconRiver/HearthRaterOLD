@@ -51,7 +51,10 @@ export default function CardList(props) {
     setSortBy(event.target.value);
   };
   return (
+      
+ 
     <div>
+      {localStorage.getItem('Authentication')}
       <select name="class" onChange={classChange} value={classFilter}>
         <option value="All">All Classes</option>
         <option value="Neutral">Neutral</option>
