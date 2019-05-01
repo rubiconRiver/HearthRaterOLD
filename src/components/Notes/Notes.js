@@ -24,7 +24,8 @@ export default function Notes(props) {
       body: JSON.stringify({
         notes: notes,
         nid: props.cardId,
-        rating: rating
+        rating: rating,
+        user: localStorage.getItem('authentication')
       })
     });
   };

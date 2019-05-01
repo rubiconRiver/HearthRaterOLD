@@ -129,8 +129,8 @@ export default function CardList(props) {
                   cardId={id}
                   name={name}
                   imgSource={imageURL}
-                  notes={cardRatings[0] ? cardRatings[0].notes : null}
-                  rating={cardRatings[0] ? cardRatings[0].rating : null}
+                  notes={cardRatings[0] ? cardRatings[cardRatings.length - 1].notes : null}
+                  rating={cardRatings[0] ? cardRatings[cardRatings.length - 1].rating : null}
                 />
               </div>
             ))

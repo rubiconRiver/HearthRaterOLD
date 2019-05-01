@@ -31,7 +31,7 @@ export default function Login(props) {
         }})
       .then(json => {
         console.log(JSON.stringify(json));
-        localStorage.setItem('Authentication', JSON.stringify(json));
+        localStorage.setItem('authentication', JSON.stringify(json));
         console.log(props.history);
         props.history.push("/cardlist");
       })
