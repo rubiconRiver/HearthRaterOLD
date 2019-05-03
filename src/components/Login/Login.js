@@ -8,9 +8,6 @@ export default function Login(props) {
 
   function onSubmit(event) {
     event.preventDefault();
-    console.log("submit!")
-    console.log(name)
-    console.log(password)
     fetch("http://localhost:9000/login", {
       method: "POST",
       headers: {
@@ -23,16 +20,13 @@ export default function Login(props) {
     })
       .then(response => {
         if(response.ok){
-          console.log("OK!")
           return response.json();
         } else {
-          console.log("not OK!")
-          throw new Error('Authentication Error');
+          alert('Authentication Error');
         }})
       .then(json => {
         console.log(JSON.stringify(json));
         localStorage.setItem('authentication', JSON.stringify(json));
-        console.log(props.history);
         props.history.push("/cardlist");
       })
   }

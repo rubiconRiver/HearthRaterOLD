@@ -30,9 +30,6 @@ export default function CardList(props) {
       console.log(localStorage.getItem('authentication'))
   }
 
-  const test = output => {
-    console.log(output);
-  };
 
   const classChange = event => {
     setClassFilter(event.target.value);
@@ -85,11 +82,11 @@ export default function CardList(props) {
         <option value="Legendary">Legendary</option>
       </select>
 
-      <select name="type" onChange={sortChange} value={sortBy}>
+      {/* <select name="type" onChange={sortChange} value={sortBy}>
         <option value="name">Name</option>
         <option value="mana">Mana</option>
         <option value="class">Class</option>
-      </select>
+      </select> */}
 
       <div className="cardList">
         {fetchJSON ? (
@@ -132,7 +129,6 @@ export default function CardList(props) {
             .map(({ id, name, imageURL, cardRatings, card_type }) => (
               <div key={id}>
                 <Entry
-                  test={test}
                   saved={setSaved}
                   cardId={id}
                   name={name}
